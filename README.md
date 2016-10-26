@@ -584,7 +584,7 @@ Add the following snippet to `config/initializers/i18njs.rb`:
 I18n::JS.include_shims = false
 ```
 
-Notice that the distribution versions (`dist/i18n.js` and `dist/i18n.min.js`) **do not** include shims, so you have to do it yourself.
+Notice that the distribution versions (`dist/i18n.js` and `dist/i18n.min.js`) **do not** include shims, so you have to do it yourself by loading `dist/shims.js`. Alternatively, you can use `dist/i18n-all.js`, which includes shims and pluralization rules.
 
 ## Maintainer
 
