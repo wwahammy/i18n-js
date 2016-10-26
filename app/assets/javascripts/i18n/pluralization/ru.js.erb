@@ -9,7 +9,7 @@
     });
   } else {
     // Global
-    factory(I18n);
+    factory(<%= I18n::JS.output_namespace %>);
   }
 }(function(I18n) {
   "use strict";
