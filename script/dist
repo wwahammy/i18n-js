@@ -47,9 +47,15 @@ write_to_file("#{output_dir}/i18n.js", render_file("app/assets/javascripts/i18n.
 # Export pluralization rules
 write_to_file("#{output_dir}/pluralization/ru.js", render_file("app/assets/javascripts/i18n/pluralization/ru.js.erb"))
 
-# Then regenerate the NPM/Bower JSON file.
+# Export shims.
+write_to_file("#{output_dir}/shims.js", render_file("app/assets/javascripts/i18n/shims.js"))
+
+# Regenerate the NPM/Bower JSON file.
 update_version("./package.json")
 update_version("./bower.json")
+
+# Export full file, containing I18n, shims and pluralization rules.
+system "cat dist/shims.js dist/i18n.js dist/pluralization/*.js > dist/i18n-all.js"
 
 # Export minified version.
 Dir["#{output_dir}/**/*.js"].each do |file|

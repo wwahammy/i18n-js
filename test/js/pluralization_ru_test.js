@@ -2,8 +2,8 @@ var I18n = require("../../dist/i18n");
 
 try {
   // require.js hack, so it doesn't fail when trying to load these files.
-  require("../../app/assets/javascripts/i18n/pluralization/ru");
-  require("../../app/assets/javascripts/i18n/shims");
+  require("../../dist/pluralization/ru");
+  require("../../dist/shims");
 } catch (e) {
   // no-op
 }
