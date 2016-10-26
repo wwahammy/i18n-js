@@ -5,7 +5,7 @@ require "erb"
 require "i18n-js"
 
 def update_version(path)
-  package = JSON.load(File.read(path))
+  package = JSON.parse(File.read(path))
   package["version"] = I18n::JS::VERSION
 
   File.open(path, "w") do |file|
