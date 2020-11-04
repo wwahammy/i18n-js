@@ -1,6 +1,5 @@
 require "i18n/js/private/hash_with_symbol_keys"
-require "i18n/js/formatters/js"
-require "i18n/js/formatters/json"
+require "i18n/js/formatters/houdini_ts.rb"
 
 module I18n
   module JS
@@ -60,11 +59,7 @@ module I18n
       end
 
       def formatter
-        if @json_only
-          Formatters::JSON.new(**formatter_options)
-        else
-          Formatters::JS.new(**formatter_options)
-        end
+        Formatters::HoudiniTs.new(**formatter_options)
       end
 
       def formatter_options
